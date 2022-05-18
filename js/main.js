@@ -31,7 +31,7 @@ function init() {
 	
 	// figura del circulito
 	const loader = new STLLoader();
-	loader.load( '../model/ascii/slotted_disk.stl', function ( geometry ) {		
+	loader.load( './model/ascii/slotted_disk.stl', function ( geometry ) {		
 		const material = new THREE.MeshPhongMaterial( 
 			//color verdecito 
 			{ color: 0xb1cb3d, specular: 0x111111, shininess: 200 } );
@@ -46,7 +46,7 @@ function init() {
 	// Figura del cuadrito
 	const material = new THREE.MeshPhongMaterial( { 
 		color: 0xbe597a, specular: 0x111111, shininess: 200 } );
-	loader.load( '../model/binary/pr2_head_pan.stl', function ( geometry ) {
+	loader.load( './model/binary/pr2_head_pan.stl', function ( geometry ) {
 			const mesh = new THREE.Mesh( geometry, material );
 		mesh.position.set( 0, - 0.37, - 0.6 );
 		mesh.rotation.set( - Math.PI / 2, 0, 0 );
@@ -55,7 +55,7 @@ function init() {
 		mesh.receiveShadow = true;
 		scene.add( mesh );
 	} );
-	loader.load( '../model/binary/pr2_head_tilt.stl', function ( geometry ) {
+	loader.load( './model/binary/pr2_head_tilt.stl', function ( geometry ) {
 		const mesh = new THREE.Mesh( geometry, material );
 		mesh.position.set( 0.136, - 0.37, - 0.6 );  //posicion de la parte de arriba de la figura
 		mesh.rotation.set( - Math.PI / 2, 0.3, 0 );
@@ -65,7 +65,7 @@ function init() {
 		scene.add( mesh );
 	} );
 // Colored binary STL
-loader.load( '../model/binary/colored.stl', function ( geometry ) {
+loader.load( './model/binary/colored.stl', function ( geometry ) {
 	let meshMaterial = material;
 	if ( geometry.hasColors ) {
 		meshMaterial = new THREE.MeshPhongMaterial( { opacity: geometry.alpha, vertexColors: true } );
