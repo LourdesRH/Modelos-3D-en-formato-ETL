@@ -55,7 +55,7 @@ function init() {
 		mesh.receiveShadow = true;
 		scene.add( mesh );
 	} );
-	loader.load( '../model//binary/pr2_head_tilt.stl', function ( geometry ) {
+	loader.load( '../model/binary/pr2_head_tilt.stl', function ( geometry ) {
 		const mesh = new THREE.Mesh( geometry, material );
 		mesh.position.set( 0.136, - 0.37, - 0.6 );  //posicion de la parte de arriba de la figura
 		mesh.rotation.set( - Math.PI / 2, 0.3, 0 );
